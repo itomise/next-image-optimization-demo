@@ -3,11 +3,9 @@ import { css } from '@emotion/react'
 import Head from 'next/head'
 import { imgList } from 'utils/imgList'
 import { LinkToTop } from 'containers/organisms/LinkToTop'
-import { useRef } from 'react'
-import { useIntersectionObserver } from 'hooks/useIntersectionObserver'
 import { Image } from 'components/atoms/Image'
 
-// const MinimumImage = ({ src, width, height }): JSX.Element => {
+// const MinimumImageComponent = ({ src, width, height }): JSX.Element => {
 //   // eslint-disable-next-line @typescript-eslint/no-var-requires
 //   const webp = require(`../../public${src}?resize&format=webp`)
 //   // eslint-disable-next-line @typescript-eslint/no-var-requires

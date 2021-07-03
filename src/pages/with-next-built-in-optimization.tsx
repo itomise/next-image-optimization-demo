@@ -17,7 +17,7 @@ const Page: NextPage = () => {
         <ul>
           {imgList.map((url, index) => (
             <li key={index}>
-              {/* <Image src={url} width={1920} height={1080} alt="" /> */}
+              <Image src={url} width={1920} height={1080} alt="" />
             </li>
           ))}
         </ul>
