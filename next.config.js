@@ -8,7 +8,7 @@ const withPWA = require('next-pwa')
 const optimizedImages = require('next-optimized-images')
 
 const nextConfig = {
-  distDir: isProd ? '.next-prod' : '.next',
+  // distDir: isProd ? '.next-prod' : '.next',
   trailingSlash: true,
   pwa: {
     disable: !isProd,
