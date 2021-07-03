@@ -1,6 +1,6 @@
 export const imgList = [
-  '/img/sample01.jpg',
-  '/img/sample02.jpg',
+  '/img/sample01.png',
+  '/img/sample02.png',
   '/img/sample03.jpg',
   '/img/sample04.jpg',
   '/img/sample05.jpg',

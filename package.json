@@ -10,10 +10,7 @@
     "generate": "run-s generate:*",
     "generate:build": "pathpida && next build",
     "generate:export": "next export -o htdocs/",
-    "test": "jest src/__tests__/.*/*.test.tsx?$",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore . --fix",
-    "storybook": "start-storybook -s ./public -p 6006",
-    "build-storybook": "build-storybook",
     "postinstall": "typesync"
   },
   "engines": {
@@ -56,7 +53,6 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.19.0",
     "imagemin-mozjpeg": "^9.0.0",
-    "imagemin-optipng": "^8.0.0",
     "imagemin-pngquant": "^9.0.2",
     "next-compose-plugins": "^2.2.1",
     "next-transpile-modules": "^6.4.0",

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 import { css } from '@emotion/react'
 import { useIntersectionObserver } from 'hooks/useIntersectionObserver'
 import { useRef } from 'react'
@@ -70,12 +71,13 @@ const Image = ({
   height,
   sizes,
   layout,
+  loading,
   className,
   objectFit,
   objectPosition,
   ...all
 }: ImageProps): JSX.Element => {
-  //TODO: fixedのときのテスト、loadingがfalseのときのテスト
+  //TODO: priority
   const rest: Partial<ImageProps> = all
 
   const widthInt = getInt(width)
@@ -99,16 +101,19 @@ const Image = ({
     sizerStyle = { display: 'block', boxSizing: 'border-box', paddingTop }
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const isLazy = loading === 'lazy' || typeof loading === 'undefined'
+
   const webp = require(`../../../public${src}?resize&format=webp`)
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const img = require(`../../../public${src}?resize`)
+  const img = require(`../../../public${src}`)
   const ref = useRef<HTMLImageElement | null>(null)
+
   const entry = useIntersectionObserver(ref, {
     rootMargin: '200px',
     freezeOnceVisible: true,
   })
-  const isVisible = !!entry?.isIntersecting
+
+  const isVisible = !isLazy || !!entry?.isIntersecting
+
   let imgAttributes = {
     width,
     height,
@@ -119,11 +124,13 @@ const Image = ({
   let webpImgAttributes = {
     srcSet: '',
   }
+
   if (isVisible) {
     imgAttributes = {
       ...imgAttributes,
-      src: img.src,
-      srcSet: img.srcSet,
+      src: img,
+      // src: img.src,
+      // srcSet: img.srcSet,
     }
     webpImgAttributes = {
       srcSet: webp.srcSet,
@@ -139,7 +146,7 @@ const Image = ({
       <picture css={style.picture}>
         <source {...webpImgAttributes} type="image/webp" />
         <img
-          // {...rest}
+          {...rest}
           {...imgAttributes}
           decoding="async"
           alt=""

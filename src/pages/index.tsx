@@ -16,11 +16,11 @@ const Page: NextPage = () => {
         <section>
           <h2>Image optimization</h2>
           <ul>
-            <li>
+            {/* <li>
               <Link href={pagesPath.with_next_built_in_optimization.$url()}>
                 <a>With nextjs built in image optimization</a>
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link href={pagesPath.with_next_optimized_images_plugin.$url()}>
                 <a>With next-optimized-images plugin</a>

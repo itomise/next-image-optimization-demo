@@ -33,11 +33,11 @@ const Page: NextPage = () => {
       <LinkToTop />
       <div css={wrap}>
         <ul>
-          {imgList.map((url, index) => (
+          {/* {imgList.map((url, index) => (
             <li key={index}>
               <Image src={url} />
             </li>
-          ))}
+          ))} */}
         </ul>
       </div>
     </>
