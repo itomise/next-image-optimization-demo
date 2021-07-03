@@ -9,7 +9,7 @@
     "dev:path": "pathpida --watch",
     "generate": "run-s generate:*",
     "generate:build": "pathpida && next build",
-    "generate:export": "next export -o htdocs/",
+    "generate:export": "next export",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore . --fix",
     "postinstall": "typesync"
   },
