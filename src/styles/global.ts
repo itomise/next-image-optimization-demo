@@ -44,36 +44,60 @@ const reset = css`
 
 const fontNoto = css`
   @font-face {
-    font-family: 'NotoSansJPLight';
+    font-family: 'NotoSans';
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url('/font/NotoSansJP/NotoSansJP-Thin.woff') format('woff'),
+      url('/font/NotoSansJP/NotoSansJP-Thin.woff2') format('woff2'),
+      url('/font/NotoSansJP/NotoSansJP-Thin.otf') format('opentype');
+  }
+
+  @font-face {
+    font-family: 'NotoSans';
     font-style: normal;
     font-weight: 300;
+    font-display: swap;
     src: url('/font/NotoSansJP/NotoSansJP-Light.woff') format('woff'),
       url('/font/NotoSansJP/NotoSansJP-Light.woff2') format('woff2'),
       url('/font/NotoSansJP/NotoSansJP-Light.otf') format('opentype');
   }
 
   @font-face {
-    font-family: 'NotoSansJPRegular';
+    font-family: 'NotoSans';
     font-style: normal;
     font-weight: 400;
+    font-display: swap;
     src: url('/font/NotoSansJP/NotoSansJP-Regular.woff') format('woff'),
       url('/font/NotoSansJP/NotoSansJP-Regular.woff2') format('woff2'),
       url('/font/NotoSansJP/NotoSansJP-Regular.otf') format('opentype');
   }
 
   @font-face {
-    font-family: 'NotoSansJPMedium';
+    font-family: 'NotoSans';
     font-style: normal;
     font-weight: 500;
+    font-display: swap;
     src: url('/font/NotoSansJP/NotoSansJP-Medium.woff') format('woff'),
       url('/font/NotoSansJP/NotoSansJP-Medium.woff2') format('woff2'),
       url('/font/NotoSansJP/NotoSansJP-Medium.otf') format('opentype');
   }
 
   @font-face {
-    font-family: 'NotoSansJPBold';
+    font-family: 'NotoSans';
     font-style: normal;
     font-weight: 700;
+    font-display: swap;
+    src: url('/font/NotoSansJP/NotoSansJP-Bold.woff') format('woff'),
+      url('/font/NotoSansJP/NotoSansJP-Bold.woff2') format('woff2'),
+      url('/font/NotoSansJP/NotoSansJP-Bold.otf') format('opentype');
+  }
+
+  @font-face {
+    font-family: 'NotoSans';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
     src: url('/font/NotoSansJP/NotoSansJP-Bold.woff') format('woff'),
       url('/font/NotoSansJP/NotoSansJP-Bold.woff2') format('woff2'),
       url('/font/NotoSansJP/NotoSansJP-Bold.otf') format('opentype');
@@ -83,10 +107,10 @@ const fontNoto = css`
 const globalStyles = css`
   ${reset}
 
-  /* ${fontNoto} */
+  ${fontNoto}
 
   html {
-    font-family: 'Helvetica Neue', Arial,'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    font-family: 'NotoSans', 'Helvetica Neue', Arial,'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
     font-weight: 500;
     font-size: 15px;
     line-height: 1.5;

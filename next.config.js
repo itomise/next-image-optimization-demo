@@ -10,6 +10,13 @@ const optimizedImages = require('next-optimized-images')
 const nextConfig = {
   // distDir: isProd ? '.next-prod' : '.next',
   trailingSlash: true,
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /(\.ttf|\.otf|\.woff|\.woff2)$/,
+      use: 'raw-loader',
+    })
+    return config
+  },
   pwa: {
     disable: !isProd,
     dest: 'public',
